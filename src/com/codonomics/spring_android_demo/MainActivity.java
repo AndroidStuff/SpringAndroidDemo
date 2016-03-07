@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
 	@Bind(R.id.jokeTextView) TextView jokeTextView;
 	@Bind(R.id.jokeButton) Button jokeButton;
 
-	private RestTemplate restTemplate = new RestTemplate();
+	private RestTemplate restTemplate = new RestTemplate(); //1. Init RestTemplate
 
 	private AsyncTask<String, Void, String> asyncTask;
 
@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ButterKnife.bind(this);
-		restTemplate.getMessageConverters().add(new GsonHttpMessageConverter());
+		restTemplate.getMessageConverters().add(new GsonHttpMessageConverter()); //2. Add Gson convertor to RestTemple Messageconverter
 	}
 
 	@OnClick(R.id.jokeButton)
@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 		@Override
 		protected String doInBackground(String... params) {
 			Log.d("AsyncJokeTask", "1 doInBackground(..)");
-			final ICNDBJoke joke = restTemplate.getForObject(URL, ICNDBJoke.class);
+			final ICNDBJoke joke = restTemplate.getForObject(URL, ICNDBJoke.class); //3. Hit the URL and pass Java class type to which the result is to be converted
 			Log.d("AsyncJokeTask", "2 doInBackground(..)");
 			return joke.joke();
 		}
