@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">SpringAndroidDemo</string>
     <string name="action_settings">Settings</string>
     <string name="joke_text">Hey, get your jokes by pressing the button below ;)</string>
     <string name="get_joke_button">Get Joke</string>
-
 </resources>

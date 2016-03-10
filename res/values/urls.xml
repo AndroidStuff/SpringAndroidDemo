@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ICNDB_BASE_URL">http://api.icndb.com/jokes</string>
+</resources>

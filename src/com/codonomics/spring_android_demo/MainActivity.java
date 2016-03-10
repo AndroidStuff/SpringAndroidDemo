@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends Activity {
-	private static final String URL = "http://api.icndb.com/jokes/random?limitTo=[nerdy]";
+	private static final String URL_RESOURCE = "/random?limitTo=[nerdy]";
 
 	@Bind(R.id.jokeTextView) TextView jokeTextView;
 	@Bind(R.id.jokeButton) Button jokeButton;
@@ -39,8 +39,9 @@ public class MainActivity extends Activity {
 	private class AsyncJokeTask extends AsyncTask<String, Void, String> {
 		@Override
 		protected String doInBackground(String... params) {
+			final String url = getString(R.string.ICNDB_BASE_URL) + URL_RESOURCE;
 			Log.d("AsyncJokeTask", "1 doInBackground(..)");
-			final ICNDBJoke joke = restTemplate.getForObject(URL, ICNDBJoke.class); //3. Hit the URL and pass Java class type to which the result is to be converted
+			final ICNDBJoke joke = restTemplate.getForObject(url, ICNDBJoke.class); //3. Hit the URL and pass Java class type to which the result is to be converted
 			Log.d("AsyncJokeTask", "2 doInBackground(..)");
 			return joke.joke();
 		}
