@@ -1,8 +1,12 @@
 # SpringAndroidDemo
 
-A Simple project that demos the utility of Spring for Android when used with Gson.
+## About
+A Simple project that demos the utility of Spring for Android when used with Gson. Using these utilities it gets easier to interact with REST services.
+1. Try getting data from REST service that doesn't ask for authentication
+2. Try getting data from REST service that does ask for authentication
+3. Try posting data to a REST service using authentication
  
-# Utilities Used
+## Utilities Used
 * ButterKnife for View injection
 * Spring-android features 
   1. A Rest Client for Android
@@ -10,7 +14,7 @@ A Simple project that demos the utility of Spring for Android when used with Gso
 * Gson for JSON to Java object conversion (used by spring-android)
 
 
-# Steps Involved
+## Steps Involved
 1. Initialize RestTemplate
 ```Java
 private RestTemplate restTemplate = new RestTemplate();
@@ -24,7 +28,7 @@ restTemplate.getMessageConverters().add(new GsonHttpMessageConverter());
 final ICNDBJoke joke = restTemplate.getForObject(URL, ICNDBJoke.class);
 ```
 
-# REST Service that can be used for Demo purposes
+## REST Service that can be used for Demo purposes
 * [The Internet Chuck Norris Database](http://www.icndb.com/api/)
     - This one requires no authentication and so is easier for quick demo purposes
 * [Open Weather Map](http://openweathermap.org/api)
