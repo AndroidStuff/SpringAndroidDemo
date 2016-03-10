@@ -2,9 +2,9 @@
 
 ## About
 A Simple project that demos the utility of Spring for Android when used with Gson. Using these utilities it gets easier to interact with REST services.
-1. Try getting data from REST service that doesn't ask for authentication
-2. Try getting data from REST service that does ask for authentication
-3. Try posting data to a REST service using authentication
+  1. Try getting data from REST service that doesn't ask for authentication
+  2. Try getting data from REST service that does ask for authentication
+  3. Try posting data to a REST service using authentication
  
 ## Utilities Used
 * ButterKnife for View injection
@@ -15,15 +15,15 @@ A Simple project that demos the utility of Spring for Android when used with Gso
 
 
 ## Steps Involved
-1. Initialize RestTemplate
+  - Initialize RestTemplate
 ```Java
 private RestTemplate restTemplate = new RestTemplate();
 ```
-2. Add Gson convertor to RestTemple Messageconverter. Do this in `onCreate(..)` method
+  - Add Gson convertor to RestTemple Messageconverter. Do this in `onCreate(..)` method
 ```Java
 restTemplate.getMessageConverters().add(new GsonHttpMessageConverter());
 ```
-3. Hit the URL and pass Java class type to which the result is to be converted
+  - Hit the URL and pass Java class type to which the result is to be converted
 ```Java
 final ICNDBJoke joke = restTemplate.getForObject(URL, ICNDBJoke.class);
 ```
