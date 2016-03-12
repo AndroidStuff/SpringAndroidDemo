@@ -2,7 +2,7 @@
 
 ## About
 A Simple project that demos the utility of Spring for Android when used with Gson. Using these utilities it gets easier to interact with REST services.
-  1. Try getting data from REST service that doesn't ask for authentication
+  1. Try getting data from REST service that doesn't ask for authentication [Done]
   2. Try getting data from REST service that does ask for authentication
   3. Try posting data to a REST service using authentication
  
